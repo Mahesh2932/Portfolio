@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahesh | Cybersecurity Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+body { margin:0; font-family:'Share Tech Mono', monospace; background:linear-gradient(135deg,#0f172a,#1e293b); color:#e2e8f0; line-height: 1.5;}
+nav { position:sticky; top:0; background:rgba(15,23,42,0.95); padding:15px; text-align:center; border-bottom:1px solid #38bdf8; z-index: 100;}
+nav a { margin:0 15px; text-decoration:none; color:#38bdf8; font-weight:bold; cursor:pointer;}
+section { display:none; padding:20px 40px; max-width:1100px; margin:auto;} 
+.active { display:block;}
+h2 { color:#38bdf8; border-bottom:2px solid #334155; padding-bottom:10px; text-transform: uppercase; margin-top: 0;}
+h3 { color:#22c55e; margin: 0; font-size: 1.1rem; display: inline-block;}
+.card { background:#020617; border:1px solid #334155; padding:20px; margin:15px 0; border-radius:12px;}
+.skill-group { margin-bottom: 15px; border-bottom: 1px solid rgba(51, 65, 85, 0.5); padding-bottom: 10px;}
+.skill-group:last-child { border-bottom: none; }
+.skill-label { color: #38bdf8; font-weight: bold; margin-right: 5px; display: block; margin-bottom: 2px;}
+.highlight { color:maroon; font-weight:bold;}
+
+/* --- CYBERSECURITY CONSOLE STYLES --- */
+.terminal-card { background:#0a0f1e; border:1px solid #38bdf8; border-radius: 8px; margin: 20px 0; overflow: hidden; box-shadow: 0 0 15px rgba(56, 189, 248, 0.1); }
+.console-header { background: #1e293b; padding: 8px 15px; display: flex; align-items: center; border-bottom: 1px solid #38bdf8; }
+.console-dots { display: flex; gap: 6px; margin-right: 15px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+.console-title { font-size: 0.8rem; color: #94a3b8; letter-spacing: 1px; }
+.console-content { padding: 20px; }
+
+/* --- NODE STYLES --- */
+.node-container { display: flex; align-items: stretch; margin-bottom: 10px; }
+.node-number { font-size: 2rem; font-weight: bold; color: #38bdf8; padding: 0 15px; display: flex; align-items: center; justify-content: center; min-width: 50px; }
+.node-body { flex-grow: 1; background: #1e293b; padding: 12px 15px; border: 1px solid #334155; position: relative; }
+.node-body h4 { margin: 0 0 5px 0; color: #22c55e; text-transform: uppercase; font-size: 0.9rem; }
+.node-body p { margin: 0; font-size: 0.9rem; line-height: 1.4; }
+.node-left .node-body { border-radius: 5px 25px 25px 5px; border-right: 4px solid #38bdf8; }
+.node-right { flex-direction: row-reverse; }
+.node-right .node-body { border-radius: 25px 5px 5px 25px; border-left: 4px solid #38bdf8; }
+
+/* Table Styles */
+table { width: 100%; border-collapse: collapse; margin-top: 10px; color: #e2e8f0; font-size: 0.9rem;}
+th, td { border: 1px solid #334155; padding: 12px; text-align: left; }
+th { background-color: #1e293b; color: #38bdf8; }
+tr:nth-child(even) { background-color: #0f172a; }
+
+/* Bar Graph Styles */
+.chart-container { margin-top: 15px; }
+.bar-wrapper { margin-bottom: 12px; }
+.bar-label { display: flex; justify-content: space-between; margin-bottom: 4px; font-size: 0.85rem;}
+.bar-bg { background: #1e293b; height: 10px; border-radius: 5px; overflow: hidden; border: 1px solid #334155;}
+.bar-fill { height: 100%; border-radius: 5px; width: 0%; transition: width 1s ease-in-out;}
+.critical { background: #ef4444; box-shadow: 0 0 8px #ef4444; }
+.high { background: #f97316; }
+.medium { background: #eab308; }
+.low { background: #3b82f6; }
+.info { background: #94a3b8; }
+</style>
+</head>
+<body>
+
+<nav>
+<a onclick="showSection('about')">About</a>
+<a onclick="showSection('skills')">Skills</a>
+<a onclick="showSection('experience')">Experience</a>
+<a onclick="showSection('projects')">Projects</a>
+<a onclick="showSection('vulnerabilities')">Vulnerabilities</a>
+<a onclick="showSection('education')">Education</a>
+<a onclick="showSection('contact')">Contact</a>
+</nav>
+
+<!-- ABOUT -->
+<section id="about" class="active">
+    <div class="terminal-card">
+        <div class="console-header">
+            <div class="console-dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+            <div class="console-title">mahesh@kali:~/profile$ cat about_me.txt</div>
+        </div>
+        <div class="console-content">
+            <div class="card" style="margin-top:0; text-align: center;">
+                <p style="margin:0; color:#22c55e;">> whoami: Mahesh L</p>
+                <p style="margin:0; color: #94a3b8;">Scan -> Hack -> Exploit -> Report -> Repeat </p>
+                <p style="margin:5px 0 0 0; font-size: 0.9rem; color:#38bdf8;">Product Security Engineer | Pentester | Offensive Security</p>
+            </div>
+            <div class="node-container node-left">
+                <div class="node-number">01</div>
+                <div class="node-body">
+                    <h4>Professional Overview</h4>
+                    <p>Security-focused <span class="highlight">Product Security Engineer</span> with 1 year of hands-on experience in penetration testing across web, mobile, and embedded/IoT systems. Skilled in identifying vulnerabilities, performing security assessments, and delivering actionable remediation strategies to strengthen application and device security.</p>
+                </div>
+            </div>
+            <div class="node-container node-right">
+                <div class="node-number">02</div>
+                <div class="node-body">
+                    <h4>Technical Innovation</h4>
+                    <p>Developed an AI-driven SAST agent to automate code analysis and enhance early vulnerability detection. Experienced in identifying security flaws through both manual penetration testing and intelligent static analysis, enabling efficient remediation.</p>
+                </div>
+            </div>
+            <div class="node-container node-left">
+                <div class="node-number">03</div>
+                <div class="node-body">
+                    <h4>Hardware Security</h4>
+                    <p>Additionally, engaged in hardware security practices with hands-on exposure to analyzing hardware attack surfaces and exploring hardware hacking techniques. Focused on understanding device-level vulnerabilities and strengthening security at the hardware and embedded system layers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS (Separated Embedded and Hardware) -->
+<section id="skills">
+    <div class="terminal-card">
+        <div class="console-header">
+            <div class="console-dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+            <div class="console-title">mahesh@kali:~/skills$ ./audit_skills.sh</div>
+        </div>
+        <div class="console-content">
+            <h3>Web Application & API Pentesting</h3>
+            <div class="skill-group"><span class="skill-label">Methodologies:</span> OWASP Top 10, Application Security Verification Standard (ASVS) Checklist.</div>
+            <div class="skill-group"><span class="skill-label">Vulnerability Classes:</span> All OWASP Top 10 and Portswigger Topic References.</div>
+            <div class="skill-group"><span class="skill-label">Tools:</span> Burp Suite Professional, Postman (API Testing), Reconnaissance Tools [nmap, nikto, dnsrecon, Recon-ng].</div>
+            <div class="skill-group"><span class="skill-label">Technologies:</span> Architectures (Microservices, Serverless, SPA), Protocols (REST, SOAP, HTTP/2), Identity (JWT, SAML, MFA), Defensive (CSP, WAF, CORS).</div>
+            <br>
+            <h3>Mobile Application Pentesting</h3>
+            <div class="skill-group"><span class="skill-label">Methodologies:</span> OWASP MASTG, OWASP Mobile Top 10.</div>
+            <div class="skill-group"><span class="skill-label">Static Analysis (SAST):</span> Reverse Engineering, Decompilation, Manifest Analysis, Hardcoded Data. Tools: MobSF, Jadx, apktool, uber-apk-signer.</div>
+            <div class="skill-group"><span class="skill-label">Dynamic Analysis (DAST):</span> Traffic Interception (MITM), Runtime Instrumentation, Attack Surface Testing. Tools: frida, Objection, drozer, apk tool.</div>
+            <br>
+            <h3>AI SAST Agent Development</h3>
+            <div class="skill-group"><span class="skill-label">Architectures:</span> LLM, RAG (Retrieval-Augmented Generation), Agentic Workflows.</div>
+            <div class="skill-group"><span class="skill-label">Data Engineering:</span> Data Parsing, Source Code Tokenization.</div>
+            <div class="skill-group"><span class="skill-label">Security Logic:</span> Automated Vulnerability Detection, Context-aware Code Review, CWE/CVE Mapping.</div>
+            <div class="skill-group"><span class="skill-label">Tools & Frameworks:</span> OpenAI API, nomic-embed-text, ChromaDB, Semantic Search.</div>
+            <br>
+            <h3>Embedded & IoT Security</h3>
+            <div class="skill-group"><span class="skill-label">Attack Surface:</span> UART Port, Mobile Control Apps (Blink), Cloud (Thinkspeak).</div>
+            <div class="skill-group"><span class="skill-label">Firmware Analysis:</span> Binwalk, Static Analysis of binaries.</div>
+            <div class="skill-group"><span class="skill-label">Wireless Protocols:</span> MQTT Data Transfer Protocol.</div>
+            <div class="skill-group"><span class="skill-label">Tools:</span> Wireshark, Logic Analyzer.</div>
+            <br>
+            <h3>Hardware Security</h3>
+            <div class="skill-group"><span class="skill-label">Physical Interfaces:</span> UART, SPI, I2C, JTAG Debugging.</div>
+            <div class="skill-group"><span class="skill-label">Hardware Attacks:</span> Side-channel Analysis, Fault Injection (Glitching), PCB Reverse Engineering.</div>
+            <div class="skill-group"><span class="skill-label">Component Testing:</span> UART Ports, USB Ports, HDMI Ports.</div>
+            <div class="skill-group"><span class="skill-label">Hardware Tools:</span> Saleae Logic Analyzer.</div>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+    <div class="terminal-card">
+        <div class="console-header">
+            <div class="console-dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+            <div class="console-title">mahesh@kali:~/work$ tail -f experience.log</div>
+        </div>
+        <div class="console-content">
+            <h3 style="color:goldenrod">Cybersecurity Intern - Sony India Software Center</h3>
+            <p style="color: #94a3b8; margin: 5px 0;">Duration: 1 Year Experience</p>
+            <ul>
+                <li>Security Assessment was performed for 6 Web Application.</li>
+                <li>Security Assessment was performed for 1 Mobile Application.</li>
+                <li>Security Assessment was performed for 1 SAST Application.</li>
+                <li>Developed prototype AI SAST Agent for automated source code Auditing.</li>
+                <li>Security Assessment was performed for esp8266 [NodeMCU Device].</li>
+                <li>Learning and Hands-on Practicing on Hardware Attacks.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS (Restored to original list format) -->
+<section id="projects">
+    <div class="terminal-card">
+        <div class="console-header">
+            <div class="console-dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+            <div class="console-title">mahesh@kali:~/projects$ ls -la</div>
+        </div>
+        <div class="console-content">
+            <div class="card">
+                <p class="highlight">Web Application Security</p>
+                <p style="color:cyan">1. Application Scope: Thick Client Application Security | Application Purpose: Mobile Verification Support</p>
+                <p style="color:#e2e8f0">Security Assessment Outcomes: <span class="highlight"> 5 </span> Validated Vulnerabilities Identified</p>
+                <p style="color:cyan">2. Application Scope: Web Application Security | Application Purpose: Robotics Support Application</p>
+                <p style="color:#e2e8f0">Security Assessment Outcomes: <span class="highlight"> 9 </span> Validated Vulnerabilities Identified</p>
+                <p style="color:cyan">3. Application Scope: Web Application Security | Application Purpose: AI Integrated Enterprise Application</p>
+                <p style="color:#e2e8f0">Security Assessment Outcomes: <span class="highlight"> 8 </span> Validated Vulnerabilities Identified</p>
+                <p style="color:cyan">4. Application Scope: Web Application Security | Application Purpose: Automated Strategic Roadmap Planner Application</p>
+                <p style="color:#e2e8f0">Security Assessment Outcomes: <span class="highlight"> 7 </span> Validated Vulnerabilities Identified</p>
+                <p style="color:cyan">5. Application Scope: Front-End and Middleware Security Assessment | Application Purpose: Spatial Data Reconstruction and Visualization Platform Application</p>
+                <p style="color:#e2e8f0">Security Assessment Outcomes: <span class="highlight"> 4 </span> Validated Vulnerabilities Identified</p>
+                <p style="color:cyan">6. Application Scope: Web Application Security | Application Purpose: AI Driven Property Valuation Application</p>
+                <p style="color:#e2e8f0">Security Assessment Outcomes: <span class="highlight"> 8 </span> Validated Vulnerabilities Identified</p>
+            </div>
+            <div class="card">
+                <p class="highlight">Mobile Application Security</p>
+                <p style="color:cyan">1. Application Scope: Mobile Application and Middleware Security | Application Purpose: AI Driven Sports Valuation Application</p>
+                <p style="color:#e2e8f0">Security Assessment Outcomes: <span class="highlight"> 3 </span> Validated Vulnerabilities Identified</p>
+            </div>
+            <div class="card">
+                <p class="highlight">Static Application Security Testing (SAST)</p>
+                <p style="color:cyan">1. Application Scope: Mobile Application Security | Application Purpose: AI Driven Sports Valuation Application</p>
+                <p style="color:#e2e8f0">Security Assessment Outcomes: <span class="highlight"> 2 </span> Validated Vulnerabilities Identified</p>
+            </div>
+            <div class="card">
+                <p class="highlight">AI SAST Agent: Enhancing SAST Accuracy and Context-Awareness via RAG</p>
+                <p style="color:#FFDAB9">Problem Statement:</p>
+                <p>Traditional Static Application Security Testing (SAST) tools [Fortify, Semgrep] rely on predefined rules and data-flow patterns to identify vulnerabilities. While effective at catching known "low-hanging issues," they struggle with context-dependent logic flaws and often produce high volumes of false positives. With the advent of Large Language Models (LLMs), security teams have begun using AI to audit code. however, LLMs used in isolation suffer from static knowledge and a lack of awareness regarding specific enterprise coding standards.</p>
+                <p style="color:#FFDAB9">The Gap between AI and security:</p>
+                <p> Current AI-driven security auditing faces three critical limitations: <br>
+                1. Static Knowledge Base: Standard LLMs cannot stay updated with the latest zero-day vulnerabilities or library-specific patches released after their training cutoff date. <br>
+                2. Lack of Organizational Context: General AI models are unaware of an organization's internal security policies, or proprietary framework, leading to inaccurate "remediation" advice. <br>
+                3. Hallucination in Patching: When generating fixes, AI agents often suggest non-existent libraries or insecure code patterns because they lack access to real-time, verified security documentation. <br>
+                </p>
+                <p style="color:#FFDAB9">Proposed Solution:</p>
+                <p>The solution is to build an AI Security Agent that doesn't just "guess" based on its training, but actively "looks up" information before giving an answer. By using RAG (Retrieval-Augmented Generation), the agent connects your source code to a live library of security knowledge like Latest CVE Databases: Real-time feeds from NVD, GitHub Advisory, and security blogs.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VULNERABILITIES (Restored Hardware Bar Graph) -->
+<section id="vulnerabilities">
+    <div class="terminal-card">
+        <div class="console-header">
+            <div class="console-dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+            <div class="console-title">mahesh@kali:~/vulns$ ./generate_report.py</div>
+        </div>
+        <div class="console-content">
+            <div class="card">
+                <h3>Web Application Vulnerabilities</h3>
+                <div class="chart-container">
+                    <div class="bar-wrapper"><div class="bar-label"><span>Critical</span><span>1</span></div><div class="bar-bg"><div class="bar-fill critical" data-val="1"></div></div></div>
+                    <div class="bar-wrapper"><div class="bar-label"><span>High</span><span>3</span></div><div class="bar-bg"><div class="bar-fill high" data-val="3"></div></div></div>
+                    <div class="bar-wrapper"><div class="bar-label"><span>Medium</span><span>15</span></div><div class="bar-bg"><div class="bar-fill medium" data-val="15"></div></div></div>
+                    <div class="bar-wrapper"><div class="bar-label"><span>Low</span><span>12</span></div><div class="bar-bg"><div class="bar-fill low" data-val="12"></div></div></div>
+                    <div class="bar-wrapper"><div class="bar-label"><span>Informational</span><span>6</span></div><div class="bar-bg"><div class="bar-fill info" data-val="6"></div></div></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Mobile Application Vulnerabilities</h3>
+                <div class="chart-container">
+                    <div class="bar-wrapper"><div class="bar-label"><span>Critical</span><span>1</span></div><div class="bar-bg"><div class="bar-fill critical" data-val="1"></div></div></div>
+                    <div class="bar-wrapper"><div class="bar-label"><span>High</span><span>1</span></div><div class="bar-bg"><div class="bar-fill high" data-val="1"></div></div></div>
+                    <div class="bar-wrapper"><div class="bar-label"><span>Medium</span><span>0</span></div><div class="bar-bg"><div class="bar-fill medium" data-val="0"></div></div></div>
+                    <div class="bar-wrapper"><div class="bar-label"><span>Low</span><span>1</span></div><div class="bar-bg"><div class="bar-fill low" data-val="1"></div></div></div>
+                    <div class="bar-wrapper"><div class="bar-label"><span>Informational</span><span>0</span></div><div class="bar-bg"><div class="bar-fill info" data-val="0"></div></div></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>SAST Code Auditing Vulnerabilities</h3>
+                <div class="chart-container">
+                    <div class="bar-wrapper"><div class="bar-label"><span>Critical</span><span>1</span></div><div class="bar-bg"><div class="bar-fill critical" data-val="0"></div></div></div>
+                    <div class="bar-wrapper"><div class="bar-label"><span>High</span><span>1</span></div><div class="bar-bg"><div class="bar-fill high" data-val="0"></div></div></div>
+                    <div class="bar-wrapper"><div class="bar-label"><span>Medium</span><span>1</span></div><div class="bar-bg"><div class="bar-fill medium" data-val="1"></div></div></div>
+                    <div class="bar-wrapper"><div class="bar-label"><span>Low</span><span>1</span></div><div class="bar-bg"><div class="bar-fill low" data-val="0"></div></div></div>
+                    <div class="bar-wrapper"><div class="bar-label"><span>Informational</span><span>1</span></div><div class="bar-bg"><div class="bar-fill info" data-val="1"></div></div></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Embedded, IoT & Hardware Vulnerabilities</h3>
+                <div class="chart-container">
+                    <div class="bar-wrapper"><div class="bar-label"><span>Critical</span><span>0</span></div><div class="bar-bg"><div class="bar-fill critical" data-val="0"></div></div></div>
+                    <div class="bar-wrapper"><div class="bar-label"><span>High</span><span>0</span></div><div class="bar-bg"><div class="bar-fill high" data-val="0"></div></div></div>
+                    <div class="bar-wrapper"><div class="bar-label"><span>Medium</span><span>0</span></div><div class="bar-bg"><div class="bar-fill medium" data-val="0"></div></div></div>
+                    <div class="bar-wrapper"><div class="bar-label"><span>Low</span><span>0</span></div><div class="bar-bg"><div class="bar-fill low" data-val="0"></div></div></div>
+                    <div class="bar-wrapper"><div class="bar-label"><span>Informational</span><span>0</span></div><div class="bar-bg"><div class="bar-fill info" data-val="0"></div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+    <div class="terminal-card">
+        <div class="console-header">
+            <div class="console-dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+            <div class="console-title">mahesh@kali:~/edu$ cat credentials.db</div>
+        </div>
+        <div class="console-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Qualification</th>
+                        <th>Institution / University</th>
+                        <th>Year</th>
+                        <th>Percentage / CGPA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Professional Course (Advanced Embedded Systems and Programming)</td>
+                        <td>Vector India Pvt Ltd Bangalore Karnataka India</td>
+                        <td>2024 - 2025 (10 Months)</td>
+                        <td>87%</td>
+                    </tr>
+                    <tr>
+                        <td>BE Electronics and Communication Engineering</td>
+                        <td>Sri Ramakrishna Engineering College Coimbatore Tamilnadu India</td>
+                        <td>2020 - 2024</td>
+                        <td>8.24 CGPA</td>
+                    </tr>
+                    <tr>
+                        <td>12th Grade (HSC)</td>
+                        <td>Sri Suka Brahma Maharishi Vidyalaya Matric Higher Secondary School</td>
+                        <td>2019 - 2020</td>
+                        <td>75%</td>
+                    </tr>
+                    <tr>
+                        <td>10th Grade (SSLC)</td>
+                        <td>Sri Saraswathi Vidyalaya Matriculation School</td>
+                        <td>2017 - 2018</td>
+                        <td>88%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<!-- CONTACT -->
+<section id="contact">
+    <div class="terminal-card">
+        <div class="console-header">
+            <div class="console-dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+            <div class="console-title">mahesh@kali:~/contact$ whois mahesh</div>
+        </div>
+        <div class="console-content">
+            <div class="card">
+                <p><span class="skill-label">Name:</span> Mahesh L</p>
+                <p><span class="skill-label">Phone:</span> +91 9384769523</p>
+                <p>
+                    <span class="skill-label">Gmail:</span> 
+                    <a href="mailto:maheshlakshmanan01@gmail.com" style="color: #22c55e; text-decoration: none;">maheshlakshmanan01@gmail.com</a>
+                </p>
+                <p>
+                    <span class="skill-label">LinkedIn:</span> 
+                    <a href="https://www.linkedin.com/in/mahesh-l-b771a4228/" target="_blank" style="color: #38bdf8; text-decoration: none;">https://www.linkedin.com/in/mahesh-l-b771a4228/</a>
+                </p>
+                <p><span class="skill-label">Permanent Address:</span> 18/A Agathiyar Street, Bharathipuram, Coimbatore-641103, Tamilnadu India</p>
+                <p><span class="skill-label">Residential Address:</span> Sri Sai Ganesh Pg, Deverabesanahalli, Bangalore Karnataka India</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+function showSection(id){
+    document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+    if(id === 'vulnerabilities') { updateBars(); }
+    window.scrollTo(0,0);
+}
+
+function updateBars() {
+    document.querySelectorAll('.bar-fill').forEach(fill => {
+        const val = parseInt(fill.getAttribute('data-val'));
+        const calculatedWidth = val === 0 ? 2 : Math.min(val * 5, 100);
+        setTimeout(() => { fill.style.width = calculatedWidth + '%'; }, 100);
+    });
+}
+
+window.onload = () => {
+    if(document.getElementById('vulnerabilities').classList.contains('active')) {
+        updateBars();
+    }
+};
+</script>
+</body>
+</html>
